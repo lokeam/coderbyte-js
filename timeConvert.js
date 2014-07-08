@@ -8,8 +8,8 @@ of hours and minuteswith a colon.
 */
 
 var timeConvert = function(num){
-  var hr = Math.floor(num / 60);
-  var min = num % 60;
-  total = hr + ":" + min;
+  var hr = Math.floor(num / 60),
+      min = num % 60,
+      total = hr + ":" + min;
   return total;
 };
