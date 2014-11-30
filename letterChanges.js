@@ -8,24 +8,17 @@ vowel in this new string (a, e, i, o, u) and finally return this modified string
 
 */
 
-var letterChanges = function(str) {
-  var letters =  ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
-      vowels = 'aeiou',
-      charArray = str.split(''),
-      changed = [],
-      i,
-      j,
-      k;
-  for (i = 0; i < charArray.length; i++ ) {
-  	for (j = 0; j < letters.length; j++) {
-  		if (charArray[i] == letters[j]) {
-  			k = letters.indexOf(letters[j]) + 1;
-  			if ( vowels.indexOf(letters[k]) != -1 ) {
-  				letters[k] = letters[k].toUpperCase();
-  			}
-  			changed.push(letters[k]);
-  		}
-  	}
-  }
-  return changed.join('');
-};
+function abra(txt){
+  var caesar = txt.replace(/[a-z]/gi, function(character){
+    switch(character) {
+      case 'z': return 'a';
+      case 'Z': return 'A';
+      default: return String.fromCharCode( 1 + character.charCodeAt(0) );
+    }
+  });
+  
+  return caesar.replace( /[aeiou]+/g, function(vowel) {
+    return vowel.toUpperCase();
+  });
+}
+
