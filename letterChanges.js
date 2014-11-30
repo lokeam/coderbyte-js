@@ -8,17 +8,17 @@ vowel in this new string (a, e, i, o, u) and finally return this modified string
 
 */
 
-function abra(txt){
-  var caesar = txt.replace(/[a-z]/gi, function(character){
+function LetterChanges(str) { 
+  var searched = str.replace( /[a-z]/gi, function(character) {
     switch(character) {
       case 'z': return 'a';
       case 'Z': return 'A';
       default: return String.fromCharCode( 1 + character.charCodeAt(0) );
     }
   });
-  
-  return caesar.replace( /[aeiou]+/g, function(vowel) {
+  // code goes here  
+  return searched.replace(/aeiou+g/, function(vowel) {
     return vowel.toUpperCase();
-  });
+  }); 
 }
 
